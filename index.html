@@ -5,24 +5,26 @@
     <script type="text/javascript" src="Scripts/angular.js"></script>
     <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
   
-    <script src="example.js"></script>
+
 
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <h1> Simple tabs with two controllers </h1>
-    <div ng-controller="tabsCtrl">
+  <div ng-controller="MyController">
+    Hello {{greetMe}}!
+  </div>
+  <script src="http://code.angularjs.org/snapshot/angular.js"></script>
 
-        <tabset>
-            <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
-                <div ng-include="tab.content"></div>
-            </tab>
-        </tabset>
-    </div>
+  <script>
+    angular.module('myApp', [])
+      .controller('MyController', ['$scope', function ($scope) {
+        $scope.greetMe = 'World';
+      }]);
 
-    <script>
-
-  
-    </script>
+    angular.element(document).ready(function() {
+      angular.bootstrap(document, ['myApp']);
+    });
+  </script>
 </body>
+
 </html>
