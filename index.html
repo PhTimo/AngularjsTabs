@@ -4,7 +4,7 @@
 
     <script type="text/javascript" src="Scripts/angular.js"></script>
     <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script  type="text/javascript" src="example.js"></script>
+
      <script type="text/javascript" src="cordova.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
@@ -25,7 +25,7 @@
 
         function onDeviceReady() {
             alert("test");
-        }
+
 
         var tabsdemo = angular.module('tabsdemo', []);
         angular.module('tabsdemo', ['ui.bootstrap']);
@@ -65,7 +65,7 @@
             },
         };
         tabsdemo.initialize();
-
+        }
         //angular.element(document).ready(function () {
         //    angular.bootstrap(document, ['tabsdemo']);
         //});
