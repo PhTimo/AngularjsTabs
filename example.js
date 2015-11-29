@@ -1,3 +1,9 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+alert("js is loaded");
+} 
+
+
 var tabsdemo = angular.module('tabsdemo', []);
 angular.module('tabsdemo', ['ui.bootstrap']);
 angular.module('tabsdemo').controller('tabsCtrl', function ($scope) {
