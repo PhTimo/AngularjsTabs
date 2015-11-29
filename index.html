@@ -9,7 +9,7 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <h1> Simple tabs with two controllers v1</h1>
+    <h1> Simple tabs with two controllers </h1>
     <div ng-controller="tabsCtrl">
 
         <tabset>
@@ -19,6 +19,76 @@
         </tabset>
     </div>
 
+    <script>
 
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            alert("test");
+        }
+
+        var tabsdemo = angular.module('tabsdemo', []);
+        angular.module('tabsdemo', ['ui.bootstrap']);
+        angular.module('tabsdemo').controller('tabsCtrl', function ($scope) {
+            $scope.tabs = [
+              { title: 'Tab1 ', content: '/tab1.html' },
+              { title: 'Tab2', content: '/tab2.html' },
+              { title: 'Tab3', content: '/tab3.html' }
+            ];
+
+
+        });
+
+
+        angular.module('tabsdemo').controller('newCtrl', function ($scope) {
+            $scope.cards = [
+              { title: '11', content: '/tab1.html' },
+              { title: '2', content: '/tab2.html' },
+              { title: '3', content: '/tab3.html' }
+            ];
+        });
+
+        var tabsdemo = {
+            // Application Constructor
+            initialize: function () {
+                alert("Go init")
+                if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+                    document.addEventListener("deviceready", this.onDeviceReady, false);
+                    alert("Test")
+                } else {
+                    this.onDeviceReady();
+                }
+            },
+
+            onDeviceReady: function () {
+                // We will init / bootstrap our application here
+            },
+        };
+        tabsdemo.initialize();
+
+        //angular.element(document).ready(function () {
+        //    angular.bootstrap(document, ['tabsdemo']);
+        //});
+
+        //// This is a function that bootstraps AngularJS, which is called from later code
+        //function bootstrapAngular() {
+        //    console.log("Bootstrapping AngularJS");
+        //    // This assumes your app is named "app" and is on the body tag: <body ng-app="app">
+        //    // Change the selector from "body" to whatever you need
+        //    var domElement = document.querySelector('body');
+        //    // Change the application name from "app" if needed
+        //    angular.bootstrap(domElement, ['tabsdemo']);
+        //}
+
+        //// This is my preferred Cordova detection method, as it doesn't require updating.
+        //if (document.URL.indexOf('http://') === -1
+        //        && document.URL.indexOf('https://') === -1) {
+        //    console.log("URL: Running in Cordova/PhoneGap");
+        //    document.addEventListener("deviceready", bootstrapAngular, false);
+        //} else {
+        //    console.log("URL: Running in browser");
+        //    bootstrapAngular();
+        //}
+    </script>
 </body>
 </html>
