@@ -1,9 +1,6 @@
-document.addEventListener('deviceready', function onDeviceReady() {
-            angular.bootstrap(document, ['tabs.demo']);
-        }, false);
-
-angular.module('tabs.demo', ['ui.bootstrap']);
-angular.module('tabs.demo').controller('tabsCtrl', function ($scope) {
+var tabsdemo = angular.module('tabsdemo', []);
+angular.module('tabsdemo', ['ui.bootstrap']);
+angular.module('tabsdemo').controller('tabsCtrl', function ($scope) {
   $scope.tabs = [
     { title:'Tab1 ', content:'/tab1.html' },
     { title:'Tab2', content:'/tab2.html'},
@@ -14,10 +11,14 @@ angular.module('tabs.demo').controller('tabsCtrl', function ($scope) {
 });
 
 
-angular.module('tabs.demo').controller('newCtrl', function ($scope) {
+angular.module('tabsdemo').controller('newCtrl', function ($scope) {
     $scope.cards = [
       { title: '11', content: '/tab1.html' },
       { title: '2', content: '/tab2.html' },
       { title: '3', content: '/tab3.html' }
     ];
+});
+
+angular.element(document).ready(function () {
+    angular.bootstrap(document, ['tabsdemo']);
 });
