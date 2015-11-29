@@ -1,4 +1,8 @@
-﻿angular.module('tabs.demo', ['ui.bootstrap']);
+document.addEventListener('deviceready', function onDeviceReady() {
+            angular.bootstrap(document, ['tabs.demo']);
+        }, false);
+
+angular.module('tabs.demo', ['ui.bootstrap']);
 angular.module('tabs.demo').controller('tabsCtrl', function ($scope) {
   $scope.tabs = [
     { title:'Tab1 ', content:'/tab1.html' },
