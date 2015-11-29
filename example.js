@@ -19,6 +19,4 @@ angular.module('tabsdemo').controller('newCtrl', function ($scope) {
     ];
 });
 
-angular.element(document).ready(function () {
-    angular.bootstrap(document, ['tabsdemo']);
-});
+
