@@ -1,9 +1,5 @@
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-alert("js is loaded");
-angular.bootstrap(document, ['tabsdemo']);
-} 
+
 
 var tabsdemo = angular.module('tabsdemo', []);
 angular.module('tabsdemo', ['ui.bootstrap']);
@@ -26,5 +22,9 @@ angular.module('tabsdemo').controller('newCtrl', function ($scope) {
     ];
 });
 
-
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+alert("js is loaded");
+angular.bootstrap(document, ['tabsdemo']);
+} 
 
