@@ -1,7 +1,4 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-alert("js is loaded");
-} 
+
 
 
 var tabsdemo = angular.module('tabsdemo', []);
@@ -25,20 +22,9 @@ angular.module('tabsdemo').controller('newCtrl', function ($scope) {
     ];
 });
 
-var tabsdemo = {
-    // Application Constructor
-    initialize: function () {
-        alert("Go init")
-        if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
-            document.addEventListener("deviceready", this.onDeviceReady, false);
-            alert("Test")
-        } else {
-            this.onDeviceReady();
-        }
-    },
 
-    onDeviceReady: function () {
-        // We will init / bootstrap our application here
-    },
-};
-tabsdemo.initialize();
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+alert("js is loaded");
+angular.bootstrap(document, ['tabsdemo']);
+} 
