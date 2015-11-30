@@ -1,5 +1,5 @@
 
-document.addEventListener("deviceready", onDeviceReady, false);
+
 function onDeviceReady() {
   alert("start loading angular");
   
@@ -30,3 +30,4 @@ alert("init");
 angular.bootstrap(document, ['tabsdemo']);
 } 
 
+document.addEventListener("deviceready", onDeviceReady, false);
