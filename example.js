@@ -1,4 +1,4 @@
-
+ alert("js load");
 
 function onDeviceReady() {
   alert("start loading angular");
