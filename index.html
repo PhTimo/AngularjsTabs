@@ -2,35 +2,36 @@
 
 <!doctype html>
 <html>
-<body>
-  <div ng-controller="MyController">
-    Hello {{greetMe}}!
-  </div>
-      <script src="SCRIPTS/angular.js"></script>
-
+<head>
+  
   <script>
-
-    document.addEventListener("deviceready", function() {
-    alert("go!");
-    var domElement = document
-    angular.bootstrap(domElement, ["myApp"]);
-    }, false);
 
     alert("a1");
     angular.module('myApp', [])
       .controller('MyController', ['$scope', function ($scope) {
         $scope.greetMe = 'World';
       }]);
-alert("a2");
-  </script>
+    alert("a2");
 
-  <script>
-    document.addEventListener("deviceready", function() {
+    function init(){
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    
+    function onDeviceReady(){
     alert("go!")
     var domElement = document
     angular.bootstrap(domElement, ["myApp"]);
-    }, false);
+    alert("go1!")
+    }
 
   </script>
+
+</head>
+<body onload="onDeviceReady()">
+  <div ng-controller="MyController">
+    Hello {{greetMe}}!
+  </div>
+      <script src="SCRIPTS/angular.js"></script>
+
 </body>
 </html>
