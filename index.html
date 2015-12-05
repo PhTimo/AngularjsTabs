@@ -9,17 +9,28 @@
       <script src="SCRIPTS/angular.js"></script>
 
   <script>
+
+    document.addEventListener("deviceready", function() {
+    alert("go!");
+    var domElement = document
+    angular.bootstrap(domElement, ["myApp"]);
+    }, false);
+
+    alert("a1");
     angular.module('myApp', [])
       .controller('MyController', ['$scope', function ($scope) {
         $scope.greetMe = 'World';
       }]);
+alert("a2");
+  </script>
 
-    //document.addEventListener("deviceready", function() {
+  <script>
+    document.addEventListener("deviceready", function() {
     alert("go!")
     var domElement = document
-    angular.bootstrap(domElement, ["angularAppName"]);
-    //}, false);
-    
+    angular.bootstrap(domElement, ["myApp"]);
+    }, false);
+
   </script>
 </body>
 </html>
