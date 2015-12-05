@@ -1,6 +1,8 @@
  function init(){
       document.addEventListener("deviceready", onDeviceReady, false);
-      FastClick.attach(document.body);
+      
+
+      
     }
   
   
@@ -15,7 +17,7 @@ angular.module('tabsdemo').controller('tabsCtrl', function ($scope) {
     { title:'Tab3', content:'tab3.html'}
   ];
 
-
+  FastClick.attach(document.body);
 });
 
 angular.module('tabsdemo').controller('newCtrl', function ($scope) {
@@ -30,4 +32,8 @@ angular.module('tabsdemo').controller('newCtrl', function ($scope) {
     var domElement = document
     angular.bootstrap(domElement, ["tabsdemo"]);
     
+    
+    
 }
+
+
