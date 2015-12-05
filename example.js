@@ -1,8 +1,12 @@
  alert("js load");
 
-function onDeviceReady() {
-  alert("start loading angular");
+    function init(){
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
   
+  
+function onDeviceReady(){
+ alert("go0")
 var tabsdemo = angular.module('tabsdemo', []);
 angular.module('tabsdemo', ['ui.bootstrap']);
 angular.module('tabsdemo').controller('tabsCtrl', function ($scope) {
@@ -15,7 +19,6 @@ angular.module('tabsdemo').controller('tabsCtrl', function ($scope) {
 
 });
 
-
 angular.module('tabsdemo').controller('newCtrl', function ($scope) {
     $scope.cards = [
       { title: '11', content: '/tab1.html' },
@@ -24,10 +27,9 @@ angular.module('tabsdemo').controller('newCtrl', function ($scope) {
     ];
 });
 
+    alert("go!")
+    var domElement = document
+    angular.bootstrap(domElement, ["tabsdemo"]);
+    alert("go1!")
+}
 
-
-alert("init");
-angular.bootstrap(document, ['tabsdemo']);
-} 
-
-document.addEventListener("deviceready", onDeviceReady, false);
