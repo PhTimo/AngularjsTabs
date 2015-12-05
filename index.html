@@ -1,22 +1,25 @@
+
+
 <!doctype html>
-<html >
-<head>
-
-    <script src="SCRIPTS/angular.js"></script>
-    <script src="SCRIPTS/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="example.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-</head>
+<html>
 <body>
-    <h1> Simple tabs with two controllers </h1>
-    <div ng-controller="tabsCtrl">
+  <div ng-controller="MyController">
+    Hello {{greetMe}}!
+  </div>
+  <script src="http://code.angularjs.org/snapshot/angular.js"></script>
 
-        <tabset>
-            <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
-                <div ng-include="tab.content"></div>
-            </tab>
-        </tabset>
-    </div>
+  <script>
+    angular.module('myApp', [])
+      .controller('MyController', ['$scope', function ($scope) {
+        $scope.greetMe = 'World';
+      }]);
+
+    document.addEventListener("deviceready", function() {
+    
+    var domElement = document
+    angular.bootstrap(domElement, ["angularAppName"]);
+    }, false);
+    
+  </script>
 </body>
 </html>
