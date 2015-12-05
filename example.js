@@ -1,6 +1,8 @@
  
     function init(){
-      document.addEventListener("deviceready", onDeviceReady, false);
+      document.addEventListener("deviceready", onDeviceReady, false
+      
+      FastClick.attach(document.body);
     }
   
   
