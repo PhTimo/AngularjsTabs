@@ -27,10 +27,7 @@ angular.module('tabsdemo').controller('newCtrl', function ($scope) {
 });
 
 
-angular.module('tabsdemo', []).
-  run(function() {
-    FastClick.attach(document.body);
-  });
+
 
     
     var domElement = document
