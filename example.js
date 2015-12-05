@@ -30,5 +30,9 @@ angular.module('tabsdemo').controller('newCtrl', function ($scope) {
     var domElement = document
     angular.bootstrap(domElement, ["tabsdemo"]);
     
+    tabsdemo.run(function() {
+    FastClick.attach(document.body);
+});
+    
 }
 
